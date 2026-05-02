@@ -12,12 +12,12 @@ let dbConnected = false;
 let moods = [];
 let posts = [];
 
-const app = express();  
+const app = express();
 app.use(cors());
 app.use(express.json());
-// Serve static files from parent directory where frontend is located
-app.use(express.static(path.join(__dirname, '..')));
-console.log('SERVING FROM', path.join(__dirname, '..'));
+// Serve static frontend files from this project directory
+app.use(express.static(path.join(__dirname)));
+console.log('SERVING FROM', path.join(__dirname));
 
 // Configure mongoose to not buffer operations
 mongoose.set('bufferTimeoutMS', 5000);
@@ -59,7 +59,7 @@ function connectDatabase() {
 connectDatabase();
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html')); 
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 app.post('/mood', async (req, res) => {
   try {
@@ -91,11 +91,6 @@ app.get('/moods', async (req, res) => {
     console.log('GET /moods error:', error.message);
     res.status(500).json([]);
   }
-});
-
-app.listen(5000, () => {
-  console.log('🚀 Server running on port 5000');
-  console.log(`📊 Database: ${dbConnected ? 'MongoDB Connected' : 'Using in-memory storage'}`);
 });
 
 app.post('/posts', async (req, res) => {

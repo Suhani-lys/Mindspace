@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Vent Feed — MindSpace</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="app.css"/>
+<link rel="stylesheet" href="vent-feed.css"/>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="tnav-logo"><div class="tnav-logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="#9B6EFF"/></svg></div><span class="tnav-logo-name">MIND<span>SPACE</span></span></a>
+  <div class="tnav-links">
+    <a href="index.html" class="tnav-link">Home</a>
+    <a href="new-vent.html" class="tnav-link">New Vent</a>
+    <a href="vent-feed.html" class="tnav-link active">Vent Feed</a>
+    <a href="journal.html" class="tnav-link">Journal</a>
+    <a href="resources.html" class="tnav-link">Resources</a>
+  </div>
+  <button class="tnav-help">🆘 Need Urgent Help?</button>
+</nav>
+<aside class="sidebar">
+  <div class="sb-top">
+    <div class="sb-logo">
+      <div class="sb-logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="#9B6EFF"/></svg></div>
+      <div><div class="sb-logo-name">MIND<span>SPACE</span></div><div class="sb-logo-sub">You're not alone.</div></div>
+    </div>
+    <nav class="sb-nav">
+      <a href="index.html" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Home</a>
+      <a href="new-vent.html" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><line x1="12" y1="8" x2="12" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>New Vent</a>
+      <a href="vent-feed.html" class="sb-link active"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Vent Feed</a>
+      <a href="#" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>AI Support</a>
+      <a href="#" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 14l4-4 4 4 4-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Mood Tracker</a>
+      <a href="journal.html" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 7h8M8 11h8M8 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Journal</a>
+      <a href="#" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Community</a>
+      <a href="resources.html" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Resources</a>
+      <a href="#" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Progress</a>
+      <a href="#" class="sb-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8"/></svg>Settings</a>
+    </nav>
+  </div>
+  <div class="sb-bottom">
+    <div class="sb-card" style="background:linear-gradient(135deg,rgba(100,60,220,.18),rgba(60,30,120,.25));border:1px solid rgba(155,110,255,.18);">
+      <div class="sb-card-title">It's okay to<br/>not be okay.</div>
+      <div class="sb-card-art"><svg width="54" height="54" viewBox="0 0 60 60" fill="none"><path d="M30 52C30 52 10 40 10 24C10 16 16 10 24 12C28 13 30 16 30 16C30 16 32 13 36 12C44 10 50 16 50 24C50 40 30 52 30 52Z" fill="rgba(155,110,255,0.15)" stroke="rgba(155,110,255,0.3)" stroke-width="1.5"/><path d="M30 44C30 44 18 35 18 26C18 21 22 18 26 19C28 20 30 22 30 22C30 22 32 20 34 19C38 18 42 21 42 26C42 35 30 44 30 44Z" fill="rgba(155,110,255,0.25)"/></svg></div>
+    </div>
+    <button class="btn-urgent"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Need Urgent Help?</button>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="page-hdr">
+    <div><h1 class="page-title">Vent Feed</h1><p class="page-sub">Real people. Real feelings. Anonymous &amp; safe.</p></div>
+    <a href="new-vent.html" class="btn-purple">+ New Vent</a>
+  </div>
+
+  <div class="feed-tabs">
+    <div class="tabs-left">
+      <button class="tab active" id="tab-recent">Recent</button>
+      <button class="tab" id="tab-following">Following</button>
+      <button class="tab" id="tab-trending">Trending</button>
+    </div>
+    <button class="filter-btn">Filter <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="6 9 12 15 18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+
+  <!-- Vent Cards -->
+  <div class="vent-card" id="vent-1">
+    <div class="vc-top">
+      <div class="vc-left">
+        <div class="avatar av-blue">😶</div>
+        <div><div class="vc-meta"><span class="vc-name">Anonymous</span><span class="vc-dot">·</span><span class="vc-time">2 min ago</span><span class="vc-dot">·</span><span class="vc-cat">Stress</span></div><span class="vc-badge new">New</span></div>
+      </div>
+      <button class="more-btn">⋯</button>
+    </div>
+    <p class="vc-text">I've been feeling so overwhelmed lately. No matter how hard I try, it feels like I'm falling behind in everything.</p>
+    <div class="vc-tags"><span class="vtag">💜 Need to talk</span></div>
+    <div class="vc-actions-row">
+      <div class="vc-left-actions">
+        <button class="action-btn like-btn" id="like-1"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 24</button>
+        <button class="action-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 8</button>
+      </div>
+      <button class="save-btn" id="save-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Save</button>
+    </div>
+  </div>
+
+  <div class="vent-card" id="vent-2">
+    <div class="vc-top">
+      <div class="vc-left">
+        <div class="avatar av-green">😶</div>
+        <div><div class="vc-meta"><span class="vc-name">Anonymous</span><span class="vc-dot">·</span><span class="vc-time">15 min ago</span><span class="vc-dot">·</span><span class="vc-cat">Relationships</span></div></div>
+      </div>
+      <button class="more-btn">⋯</button>
+    </div>
+    <p class="vc-text">It hurts when people leave without even trying to understand your side. How do you deal with that?</p>
+    <div class="vc-tags"><span class="vtag">💚 Looking for advice</span></div>
+    <div class="vc-actions-row">
+      <div class="vc-left-actions">
+        <button class="action-btn like-btn" id="like-2"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 31</button>
+        <button class="action-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 12</button>
+      </div>
+      <button class="save-btn" id="save-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Save</button>
+    </div>
+  </div>
+
+  <div class="vent-card" id="vent-3">
+    <div class="vc-top">
+      <div class="vc-left">
+        <div class="avatar av-purple">😶</div>
+        <div><div class="vc-meta"><span class="vc-name">Anonymous</span><span class="vc-dot">·</span><span class="vc-time">1 hr ago</span><span class="vc-dot">·</span><span class="vc-cat">Academic</span></div></div>
+      </div>
+      <button class="more-btn">⋯</button>
+    </div>
+    <p class="vc-text">Exams, pressure, expectations... sometimes I just want a break from everything. Anyone else feeling this way?</p>
+    <div class="vc-tags"><span class="vtag">💜 Relatable</span></div>
+    <div class="vc-actions-row">
+      <div class="vc-left-actions">
+        <button class="action-btn like-btn" id="like-3"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 45</button>
+        <button class="action-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 16</button>
+      </div>
+      <button class="save-btn" id="save-3"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Save</button>
+    </div>
+  </div>
+
+  <div class="vent-card" id="vent-4">
+    <div class="vc-top">
+      <div class="vc-left">
+        <div class="avatar av-orange">😶</div>
+        <div><div class="vc-meta"><span class="vc-name">Anonymous</span><span class="vc-dot">·</span><span class="vc-time">2 hr ago</span><span class="vc-dot">·</span><span class="vc-cat">Family</span></div></div>
+      </div>
+      <button class="more-btn">⋯</button>
+    </div>
+    <p class="vc-text">Some days at home are really tough. I wish I could just be heard without being judged.</p>
+    <div class="vc-tags"><span class="vtag">🧡 Just venting</span></div>
+    <div class="vc-actions-row">
+      <div class="vc-left-actions">
+        <button class="action-btn like-btn" id="like-4"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 19</button>
+        <button class="action-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 5</button>
+      </div>
+      <button class="save-btn" id="save-4"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Save</button>
+    </div>
+  </div>
+</main>
+
+<aside class="rpanel">
+  <div class="rp-card">
+    <h3 class="rp-heading"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="#9B6EFF"/></svg>Top Supporters<a href="#">See all</a></h3>
+    <div class="supporter"><div class="sup-av" style="background:rgba(100,160,255,.15);">😊</div><div class="sup-info"><div class="sup-name">KindSoul</div><div class="sup-role">Supportive</div></div><span class="sup-count">128 💜</span></div>
+    <div class="supporter"><div class="sup-av" style="background:rgba(100,220,160,.15);">😊</div><div class="sup-info"><div class="sup-name">CareBuddy</div><div class="sup-role">Supportive</div></div><span class="sup-count">98 💜</span></div>
+    <div class="supporter"><div class="sup-av" style="background:rgba(220,130,255,.15);">😊</div><div class="sup-info"><div class="sup-name">HeartHealer</div><div class="sup-role">Supportive</div></div><span class="sup-count">76 💜</span></div>
+    <div class="supporter"><div class="sup-av" style="background:rgba(255,180,100,.15);">😊</div><div class="sup-info"><div class="sup-name">PeacefulMind</div><div class="sup-role">Supportive</div></div><span class="sup-count">65 💜</span></div>
+  </div>
+  <div class="rp-card">
+    <h3 class="rp-heading"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#f97316" stroke-width="1.8"/><path d="M12 8v4l3 3" stroke="#f97316" stroke-width="1.8" stroke-linecap="round"/></svg>Trending Topics</h3>
+    <div class="trend-grid">
+      <div class="trend-tag"># Overwhelmed<span>1.2k vents</span></div>
+      <div class="trend-tag"># Anxiety<span>980 vents</span></div>
+      <div class="trend-tag"># Relationships<span>870 vents</span></div>
+      <div class="trend-tag"># Exams<span>760 vents</span></div>
+      <div class="trend-tag"># Loneliness<span>640 vents</span></div>
+      <div class="trend-tag"># Loneless<span>540 vents</span></div>
+    </div>
+    <button class="view-all-btn">View all topics →</button>
+  </div>
+  <div class="rp-card">
+    <h3 class="rp-heading"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" stroke="#9B6EFF" stroke-width="1.8"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" stroke="#9B6EFF" stroke-width="1.8"/></svg>Daily Reminder</h3>
+    <p style="font-size:13px;color:var(--t2);line-height:1.6;">Be gentle with yourself.<br/>You're doing the best you can.</p>
+  </div>
+</aside>
+<script src="vent-feed.js"></script>
+</body></html>

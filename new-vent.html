@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Vent — MindSpace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="new-vent.css" />
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="tnav-logo"><div class="tnav-logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="#9B6EFF"/></svg></div><span class="tnav-logo-name">MIND<span>SPACE</span></span></a>
+  <div class="tnav-links">
+    <a href="index.html" class="tnav-link">Home</a>
+    <a href="new-vent.html" class="tnav-link active">New Vent</a>
+    <a href="vent-feed.html" class="tnav-link">Vent Feed</a>
+    <a href="journal.html" class="tnav-link">Journal</a>
+    <a href="resources.html" class="tnav-link">Resources</a>
+  </div>
+  <button class="tnav-help">🆘 Need Urgent Help?</button>
+</nav>
+<!-- ══ AI PANEL (left) ═════════════════════════════════ -->
+<aside class="ai-panel" id="ai-panel">
+  <div class="aip-header">
+    <div class="aip-hdr-info">
+      <div class="aip-avatar">🤖</div>
+      <div><div class="aip-name">AI Support</div><div class="aip-status-line"><span class="aip-dot"></span>Online · Ready to listen</div></div>
+    </div>
+    <button class="aip-analyze-btn" id="analyze-btn">✨ Analyze</button>
+  </div>
+  <div class="aip-chat" id="aip-chat">
+    <div class="aip-msg bot"><div class="aip-msg-bub">Hi 💜 I'm your AI companion. I'm here to listen and support you — no judgment, ever.</div></div>
+    <div class="aip-msg bot"><div class="aip-msg-bub">Select how you're feeling or write your vent, then click <strong>✨ Analyze</strong> and I'll respond to what you've shared.</div></div>
+  </div>
+  <div class="aip-quick" id="aip-quick">
+    <button class="aip-qbtn" data-msg="I need someone to talk to">💬 Talk</button>
+    <button class="aip-qbtn" data-msg="I'm overwhelmed, help me cope">😮‍💨 Overwhelmed</button>
+    <button class="aip-qbtn" data-msg="Give me some practical advice">💡 Advice</button>
+    <button class="aip-qbtn" data-msg="I just want someone to listen">🫂 Comfort</button>
+  </div>
+  <div class="aip-input-row">
+    <input type="text" id="aip-input" class="aip-input" placeholder="Message AI..." autocomplete="off"/>
+    <button class="aip-send-btn" id="aip-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22 11 13 2 9l20-7z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+</aside>
+
+
+<!-- ══ MAIN ══════════════════════════════════════════════════ -->
+
+
+      
+
+<!-- ══ MAIN ══════════════════════════════════════════════════ -->
+<main class="main">
+  <div class="vent-card">
+
+    <!-- Card Header -->
+    <div class="vc-header">
+      <div class="vc-header-left">
+        <a href="index.html" class="back-btn" id="back-btn" title="Go back">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div>
+          <h1 class="vc-title">New Vent</h1>
+          <p class="vc-subtitle">Share what's on your mind. Get support. Feel better.</p>
+        </div>
+      </div>
+      <div class="vc-anon-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <div class="anon-badge-title">100% Anonymous</div>
+          <div class="anon-badge-sub">Your identity is always protected</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Emotion -->
+    <div class="vc-section">
+      <p class="section-label">How are you feeling right now?</p>
+      <div class="emotion-row" id="emotion-row">
+        <button class="em-btn" id="em-sad" data-e="sad"><span class="em-ico">😞</span><span class="em-lbl">Sad</span></button>
+        <button class="em-btn" id="em-anxious" data-e="anxious"><span class="em-ico">😰</span><span class="em-lbl">Anxious</span></button>
+        <button class="em-btn" id="em-angry" data-e="angry"><span class="em-ico">😤</span><span class="em-lbl">Angry</span></button>
+        <button class="em-btn" id="em-neutral" data-e="neutral"><span class="em-ico">😐</span><span class="em-lbl">Neutral</span></button>
+        <button class="em-btn" id="em-happy" data-e="happy"><span class="em-ico">🙂</span><span class="em-lbl">Happy</span></button>
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="vc-section">
+      <p class="section-label">What's on your mind?</p>
+      <div class="textarea-wrap">
+        <textarea id="vent-text" class="vent-ta" placeholder="Write your thoughts here..." maxlength="2000" rows="6"></textarea>
+        <span class="char-count"><span id="char-now">0</span>/2000</span>
+      </div>
+      <div class="privacy-note">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Your vent is private and anonymous.
+      </div>
+    </div>
+
+    <!-- Category -->
+    <div class="vc-section">
+      <p class="section-label">Choose a category <span class="opt">(optional)</span></p>
+      <div class="cat-row" id="cat-row">
+        <button class="cat-pill" id="cat-stress" data-c="stress">Stress</button>
+        <button class="cat-pill" id="cat-rel" data-c="relationships">Relationships</button>
+        <button class="cat-pill" id="cat-academic" data-c="academic">Academic</button>
+        <button class="cat-pill" id="cat-family" data-c="family">Family</button>
+        <button class="cat-pill" id="cat-work" data-c="work">Work</button>
+        <button class="cat-pill" id="cat-other" data-c="other">Other</button>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="vc-section">
+      <p class="section-label">Add tags <span class="opt">(optional)</span></p>
+      <div class="tags-field" id="tags-field">
+        <input type="text" id="tag-input" class="tag-input" placeholder="Add tags..." autocomplete="off" />
+      </div>
+      <p class="field-hint">Helps others relate and support you better.</p>
+    </div>
+
+    <!-- Anonymous toggle -->
+    <div class="vc-section anon-row">
+      <div class="anon-info">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <div class="anon-title">Share anonymously</div>
+          <div class="anon-sub">No one will know it's you.</div>
+        </div>
+      </div>
+      <label class="toggle" id="toggle-anon">
+        <input type="checkbox" id="anon-chk" checked />
+        <span class="t-track"><span class="t-thumb"></span></span>
+      </label>
+    </div>
+
+    <!-- Actions -->
+    <div class="vc-actions">
+      <button class="btn-draft" id="btn-draft">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Save Draft
+      </button>
+      <button class="btn-post" id="btn-post">
+        Post Vent
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22 11 13 2 9l20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <p class="vc-footer-note">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      By posting, you agree to our <a href="#" class="guidelines-link">Community Guidelines</a>
+    </p>
+
+  </div><!-- /vent-card -->
+</main>
+
+<!-- ══ RIGHT PANEL ═══════════════════════════════════════════ -->
+<aside class="rpanel">
+  <div class="rp-card" id="rp-before">
+    <h3 class="rp-heading">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 18.75l-6.75-6.75L3.75 10.5l5.25 5.25L20.25 5.25 21.75 6.75z" fill="#9B6EFF"/></svg>
+      Before you post
+    </h3>
+    <div class="rp-tip">
+      <div class="rp-tip-icon">💜</div>
+      <div><div class="rp-tip-title">Be honest with yourself</div><div class="rp-tip-desc">Expressing your feelings is the first step to healing.</div></div>
+    </div>
+    <div class="rp-tip">
+      <div class="rp-tip-icon">🔒</div>
+      <div><div class="rp-tip-title">You're in a safe space</div><div class="rp-tip-desc">Everything you share is anonymous and secure.</div></div>
+    </div>
+    <div class="rp-tip">
+      <div class="rp-tip-icon">🤝</div>
+      <div><div class="rp-tip-title">You're not alone</div><div class="rp-tip-desc">Our community is here to listen and support you.</div></div>
+    </div>
+  </div>
+
+  <div class="rp-card" id="rp-quick">
+    <h3 class="rp-heading">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Quick Actions
+    </h3>
+    <button class="qa-btn">
+      <div class="qa-icon">🤖</div>
+      <div class="qa-text"><div class="qa-title">Talk to AI</div><div class="qa-desc">Chat with our AI for instant support and guidance.</div></div>
+      <svg class="qa-arr" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="qa-btn">
+      <div class="qa-icon">🌿</div>
+      <div class="qa-text"><div class="qa-title">Grounding Exercise</div><div class="qa-desc">Calm your mind with a quick breathing exercise.</div></div>
+      <svg class="qa-arr" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="qa-btn">
+      <div class="qa-icon">📔</div>
+      <div class="qa-text"><div class="qa-title">Write in Journal</div><div class="qa-desc">Write your thoughts in your private journal.</div></div>
+      <svg class="qa-arr" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <div class="rp-reminder">
+    <div class="rp-reminder-text">Your feelings are valid.<span>Take your time. We're here for you.</span></div>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#9B6EFF" stroke-width="1.5"/></svg>
+  </div>
+</aside>
+
+
+
+<script src="new-vent.js"></script>
+</body>
+</html>

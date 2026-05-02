@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MindSpace — Anonymous Mental Health Support Platform. Share thoughts anonymously, track your mood, and receive AI-powered emotional support." />
+  <title>MindSpace — Anonymous Mental Health Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="#9B6EFF"/>
+        </svg>
+      </span>
+      <span class="logo-text">Mind<span class="logo-accent">Space</span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="new-vent.html" class="nav-link">New Vent</a></li>
+      <li><a href="vent-feed.html" class="nav-link">Vent Feed</a></li>
+      <li><a href="journal.html" class="nav-link">Journal</a></li>
+      <li><a href="resources.html" class="nav-link">Resources</a></li>
+    </ul>
+    <a href="new-vent.html" class="btn-get-started" id="btn-get-started">Get Started &rarr;</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+
+    <!-- Left: Text Content -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Your Mental Well-being Matters
+      </div>
+
+      <h1 class="hero-heading">
+        Vent Freely.<br />
+        Get AI Support.<br />
+        <span class="heading-accent">Track Your Mood.</span>
+      </h1>
+      <p class="hero-platform-label">Anonymous Mental Health Support Platform</p>
+
+      <p class="hero-sub">
+        MindSpace is a full-stack application where users can share thoughts anonymously,
+        track their mood, receive AI-powered emotional support, and connect with a supportive community.
+      </p>
+
+      <div class="hero-cta">
+        <a href="new-vent.html" class="btn-primary" id="explore-features-btn">
+          Start Venting
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#features" class="btn-secondary" id="explore-features-btn-2">
+          Explore Features
+        </a>
+      </div>
+
+
+    </div>
+
+    <!-- Right: Image Panel -->
+    <div class="hero-visual">
+      <div class="image-wrapper">
+        <img
+          src="mindspace_hero.png"
+          alt="A person sitting by a window at night, looking at city lights — peaceful solitude"
+          class="hero-img"
+          id="hero-image"
+        />
+        <!-- Gradient overlay -->
+        <div class="img-overlay"></div>
+
+        <!-- Floating UI Chips -->
+        <div class="chip chip-chat" id="chip-chat">
+          <span class="chip-avatar">💜</span>
+          <div class="chip-body">
+            <span class="chip-label">MindSpace</span>
+            <span class="chip-msg">You're not alone ❤️</span>
+          </div>
+        </div>
+
+        <div class="chip chip-ai" id="chip-ai">
+          <span class="chip-status"></span>
+          <div class="chip-body">
+            <span class="chip-label">AI Analysis</span>
+            <span class="chip-emotion">Emotion Detected: <strong>Anxiety</strong></span>
+          </div>
+          <div class="chip-bar">
+            <div class="chip-bar-fill"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FEATURES REMOVED -->
+  <section class="features-section" id="features" style="display:none;">
+    <div class="section-label">Core Features</div>
+    <h2 class="section-heading">What MindSpace Offers</h2>
+    <div class="features-grid">
+
+      <div class="feature-card" id="feature-anonymous">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Anonymous Sharing</h3>
+        <p>Post your thoughts, feelings, and experiences freely. No name, no profile picture, no judgment.</p>
+      </div>
+
+      <div class="feature-card" id="feature-ai">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#9B6EFF" stroke-width="1.8"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>AI Emotion Analysis</h3>
+        <p>Our NLP model reads the emotional context of your posts and provides personalized, supportive responses.</p>
+      </div>
+
+      <div class="feature-card" id="feature-mood">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round"/><path d="M7 14l4-4 4 4 4-6" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Mood Tracker</h3>
+        <p>Log your daily emotional state and visualize patterns over time with a clean, private dashboard.</p>
+      </div>
+
+      <div class="feature-card" id="feature-community">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#9B6EFF" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Community Support</h3>
+        <p>Connect with others who understand. Upvote helpful posts, offer support, and feel less alone.</p>
+      </div>
+
+      <div class="feature-card" id="feature-private">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#9B6EFF" stroke-width="1.8"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>End-to-End Privacy</h3>
+        <p>Zero PII stored. Your account is pseudonymous by design. We never sell or share your data.</p>
+      </div>
+
+      <div class="feature-card" id="feature-journal">
+        <div class="feature-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Private Journal</h3>
+        <p>Write entries only you can see. A quiet space to process your thoughts without external noise.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECH STACK STRIP -->
+  <section class="stack-strip" id="stack">
+    <p class="stack-line">
+      Built with
+      <span class="stack-tag">React</span>
+      <span class="stack-dot">·</span>
+      <span class="stack-tag">Node.js</span>
+      <span class="stack-dot">·</span>
+      <span class="stack-tag">Express</span>
+      <span class="stack-dot">·</span>
+      <span class="stack-tag">MongoDB</span>
+      <span class="stack-dot">·</span>
+      <span class="stack-tag">AI Emotion Analysis</span>
+    </p>
+  </section>
+
+</body>
+</html>
