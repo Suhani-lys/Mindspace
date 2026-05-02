@@ -1,0 +1,29 @@
+{
+  "name": "mindspace",
+  "version": "1.0.0",
+  "description": "MindSpace is an anonymous mental health platform designed to provide a safe and supportive space for individuals to express themselves and seek peer support. It empowers users to share their thoughts and feelings without fear of judgment while tracking their emotional well-being over time.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suhani-lys/Mindspace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Suhani-lys/Mindspace/issues"
+  },
+  "homepage": "https://github.com/Suhani-lys/Mindspace#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0",
+    "mongoose": "^9.3.3",
+    "natural": "^8.1.1"
+  }
+}
