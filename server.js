@@ -173,3 +173,6 @@ app.get('/api/journal', async (req, res) => {
     res.status(500).json([]);
   }
 });
+app.get('/api/gemini-key', (req, res) => {
+  res.json({ key: process.env.GEMINI_API_KEY });
+});

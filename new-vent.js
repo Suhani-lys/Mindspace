@@ -122,7 +122,6 @@ function showTyping() {
   aiChat.scrollTop = aiChat.scrollHeight;
   return t;
 }
-
 async function sendAI(text) {
   if (!text.trim()) return;
   addMsg(text, true);
@@ -130,7 +129,10 @@ async function sendAI(text) {
   const typing = showTyping();
 
   try {
-    const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDAp0_Q-QWqRPV6I6utTOs9JFcvDftLtJY', {
+    const keyRes = await fetch('/api/gemini-key');
+    const keyData = await keyRes.json();
+    
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${keyData.key}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -145,10 +147,14 @@ async function sendAI(text) {
     typing.remove();
     addMsg(reply, false);
   } catch(e) {
+    console.error(e);
     typing.remove();
     addMsg("I'm here for you. Can you tell me more about how you're feeling?", false);
   }
 }
+
+
+   
 aiSend.addEventListener('click', () => sendAI(aiInput.value));
 aiInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendAI(aiInput.value); });
 
