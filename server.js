@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();  
 const cors = require('cors'); 
 const predictMentalState = require('./ml/mentalStateModel');
-let JournalEntry = require('./models/JournalEntry');
+let JournalEntry = require('./models/journalEntry');
 
 let Mood, Post;
 let dbConnected = false;
@@ -43,7 +43,7 @@ function connectDatabase() {
       dbConnected = true;
       Mood = require('./models/Mood');
       Post = require('./models/post');
-      journalEntry = require('./models/JournalEntry');
+      JournalEntry = require('./models/journalEntry');
     })
     .catch(err => {
       console.log('⚠️  MongoDB connection failed - using in-memory storage');
