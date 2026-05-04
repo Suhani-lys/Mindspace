@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();  
 const cors = require('cors'); 
 const predictMentalState = require('./ml/mentalStateModel');
+let JournalEntry = require('./models/JournalEntry');
 
 let Mood, Post;
 let dbConnected = false;
@@ -42,6 +43,7 @@ function connectDatabase() {
       dbConnected = true;
       Mood = require('./models/Mood');
       Post = require('./models/post');
+      journalEntry = require('./models/JournalEntry');
     })
     .catch(err => {
       console.log('⚠️  MongoDB connection failed - using in-memory storage');
@@ -133,6 +135,41 @@ app.get('/posts', async (req, res) => {
     }
   } catch (error) {
     console.log('GET /posts error:', error.message);
+    res.status(500).json([]);
+  }
+});
+
+
+
+
+// Add these routes:
+app.post('/api/journal', async (req, res) => {
+  try {
+    const entryData = {
+      text: req.body.text,
+      mood: req.body.mood,
+      tags: req.body.tags,
+      createdAt: new Date()
+    };
+    if (dbConnected && JournalEntry) {
+      const entry = new JournalEntry(entryData);
+      await entry.save();
+    }
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ success: false });
+  }
+});
+
+app.get('/api/journal', async (req, res) => {
+  try {
+    if (dbConnected && JournalEntry) {
+      const entries = await JournalEntry.find().sort({ createdAt: -1 });
+      res.json(entries);
+    } else {
+      res.json([]);
+    }
+  } catch (error) {
     res.status(500).json([]);
   }
 });

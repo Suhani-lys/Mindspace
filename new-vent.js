@@ -51,21 +51,36 @@ function renderTags() {
 }
 
 // Post Vent
-document.getElementById('btn-post').addEventListener('click', function() {
+document.getElementById('btn-post').addEventListener('click', async function() {
   if (!ta.value.trim()) {
     ta.focus();
     ta.style.borderColor = 'rgba(220,80,80,0.4)';
     setTimeout(() => ta.style.borderColor = '', 1800);
     return;
   }
-  this.textContent = 'Posted ✓';
-  this.style.background = '#2d7a4f';
-  this.disabled = true;
-  setTimeout(() => {
-    this.innerHTML = 'Post Vent <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22 11 13 2 9l20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    this.style.background = '';
-    this.disabled = false;
-  }, 2500);
+
+  try {
+    const response = await fetch('/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: ta.value.trim() })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      this.textContent = 'Posted ✓';
+      this.style.background = '#2d7a4f';
+      this.disabled = true;
+      setTimeout(() => {
+        this.innerHTML = 'Post Vent <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22 11 13 2 9l20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        this.style.background = '';
+        this.disabled = false;
+      }, 2500);
+    }
+  } catch (error) {
+    console.error('Error posting vent:', error);
+  }
 });
 
 // Save Draft
