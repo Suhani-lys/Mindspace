@@ -101,9 +101,9 @@ const aiResponses = [
   "I understand. Feeling overwhelmed can make everything feel impossible. But you've already taken a brave step by reaching out. 💜"
 ];
 let aiIndex = 0;
-const aiChat = document.getElementById('ai-chat');
-const aiInput = document.getElementById('ai-input');
-const aiSend = document.getElementById('ai-send-btn');
+const aiChat = document.getElementById('aip-chat');
+const aiInput = document.getElementById('aip-input');
+const aiSend = document.getElementById('aip-send');
 
 function addMsg(text, isUser) {
   const div = document.createElement('div');
@@ -123,18 +123,32 @@ function showTyping() {
   return t;
 }
 
-function sendAI(text) {
+async function sendAI(text) {
   if (!text.trim()) return;
   addMsg(text, true);
   aiInput.value = '';
   const typing = showTyping();
-  setTimeout(() => {
-    typing.remove();
-    addMsg(aiResponses[aiIndex % aiResponses.length], false);
-    aiIndex++;
-  }, 1200 + Math.random() * 600);
-}
 
+  try {
+    const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDAp0_Q-QWqRPV6I6utTOs9JFcvDftLtJY', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{
+          parts: [{ text: `You are a compassionate mental health support companion called MindSpace AI. The user says: "${text}". Reply with empathy, kindness and support in 2-3 sentences.` }]
+        }]
+      })
+    });
+
+    const data = await response.json();
+    const reply = data.candidates[0].content.parts[0].text;
+    typing.remove();
+    addMsg(reply, false);
+  } catch(e) {
+    typing.remove();
+    addMsg("I'm here for you. Can you tell me more about how you're feeling?", false);
+  }
+}
 aiSend.addEventListener('click', () => sendAI(aiInput.value));
 aiInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendAI(aiInput.value); });
 
