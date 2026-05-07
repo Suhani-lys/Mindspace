@@ -78,3 +78,4 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;-webkit
 @media(max-width:900px){body{grid-template-columns:1fr}.rpanel{display:none}}
 @media(max-width:680px){.main{padding:20px 14px 48px}}
 @media(max-width:600px){.tnav-links{display:none}}
+@media(max-width:1100px){.tnav-links .tnav-link{padding:6px 10px;font-size:12.5px}}

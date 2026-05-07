@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Chat Rooms — MindSpace</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="app.css"/>
+<link rel="stylesheet" href="chat-rooms.css"/>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="tnav-logo">
+    <div class="tnav-logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="#9B6EFF"/></svg></div>
+    <span class="tnav-logo-name">MIND<span>SPACE</span></span>
+  </a>
+  <div class="tnav-links">
+    <a href="index.html" class="tnav-link">Home</a>
+    <a href="dashboard.html" class="tnav-link">Dashboard</a>
+    <a href="new-vent.html" class="tnav-link">New Vent</a>
+    <a href="vent-feed.html" class="tnav-link">Vent Feed</a>
+    <a href="chat-rooms.html" class="tnav-link active">Chat Rooms</a>
+    <a href="journal.html" class="tnav-link">Journal</a>
+    <a href="resources.html" class="tnav-link">Resources</a>
+  </div>
+  <button class="tnav-help">🆘 Need Urgent Help?</button>
+</nav>
+
+<div class="chat-layout">
+
+  <!-- Left: Room List -->
+  <aside class="rooms-panel">
+    <div class="rooms-header">
+      <h1 class="rooms-title">Chat Rooms
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </h1>
+      <p class="rooms-sub">Join a safe space and talk with people who understand.</p>
+    </div>
+
+    <div class="rooms-tabs">
+      <button class="rtab active">All Rooms</button>
+      <button class="rtab">Trending</button>
+      <button class="rtab">Most Active</button>
+    </div>
+
+    <div class="rooms-list">
+
+      <div class="room-card active-room" data-room="exam" data-name="Exam Stress" data-online="128" data-icon="📚" data-color="rgba(155,110,255,0.2)">
+        <div class="rc-icon" style="background:rgba(155,110,255,0.15);">📚</div>
+        <div class="rc-body">
+          <div class="rc-name">Exam Stress</div>
+          <div class="rc-desc">Feeling overwhelmed with exams? You're not alone.</div>
+          <div class="rc-online"><span class="online-dot"></span> 128 people online</div>
+        </div>
+        <button class="join-btn">Join Room</button>
+      </div>
+
+      <div class="room-card" data-room="breakup" data-name="Breakups &amp; Healing" data-online="96" data-icon="💔" data-color="rgba(240,100,130,0.2)">
+        <div class="rc-icon" style="background:rgba(240,100,130,0.15);">💔</div>
+        <div class="rc-body">
+          <div class="rc-name">Breakups &amp; Healing</div>
+          <div class="rc-desc">Share, heal and move forward one step at a time.</div>
+          <div class="rc-online"><span class="online-dot"></span> 96 people online</div>
+        </div>
+        <button class="join-btn">Join Room</button>
+      </div>
+
+      <div class="room-card" data-room="loneliness" data-name="Loneliness" data-online="74" data-icon="🌙" data-color="rgba(100,160,255,0.2)">
+        <div class="rc-icon" style="background:rgba(100,160,255,0.15);">🌙</div>
+        <div class="rc-body">
+          <div class="rc-name">Loneliness</div>
+          <div class="rc-desc">It's okay to feel lonely sometimes. Let's support each other.</div>
+          <div class="rc-online"><span class="online-dot"></span> 74 people online</div>
+        </div>
+        <button class="join-btn">Join Room</button>
+      </div>
+
+      <div class="room-card" data-room="career" data-name="Career Anxiety" data-online="63" data-icon="💼" data-color="rgba(80,200,140,0.2)">
+        <div class="rc-icon" style="background:rgba(80,200,140,0.15);">💼</div>
+        <div class="rc-body">
+          <div class="rc-name">Career Anxiety</div>
+          <div class="rc-desc">Uncertain about your future? Let's talk about it.</div>
+          <div class="rc-online"><span class="online-dot"></span> 63 people online</div>
+        </div>
+        <button class="join-btn">Join Room</button>
+      </div>
+
+      <div class="room-card" data-room="latenight" data-name="Late Night Thoughts" data-online="55" data-icon="🌃" data-color="rgba(155,110,255,0.2)">
+        <div class="rc-icon" style="background:rgba(100,80,180,0.2);">🌃</div>
+        <div class="rc-body">
+          <div class="rc-name">Late Night Thoughts</div>
+          <div class="rc-desc">For the thoughts that hit hard at night.</div>
+          <div class="rc-online"><span class="online-dot"></span> 55 people online</div>
+        </div>
+        <button class="join-btn">Join Room</button>
+      </div>
+
+      <div class="room-card" data-room="positive" data-name="Positive Space" data-online="110" data-icon="☀️" data-color="rgba(255,200,60,0.2)">
+        <div class="rc-icon" style="background:rgba(255,200,60,0.15);">☀️</div>
+        <div class="rc-body">
+          <div class="rc-name">Positive Space</div>
+          <div class="rc-desc">Share positivity and good vibes. Let's uplift each other.</div>
+          <div class="rc-online"><span class="online-dot"></span> 110 people online</div>
+        </div>
+        <button class="join-btn">Join Room</button>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Right: Chat Window -->
+  <section class="chat-window" id="chat-window">
+
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <button class="back-btn" id="back-btn" aria-label="Back to rooms">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ch-icon" id="ch-icon">📚</div>
+      <div class="ch-info">
+        <div class="ch-name" id="ch-name">Exam Stress</div>
+        <div class="ch-online"><span class="online-dot"></span> <span id="ch-count">128</span> people online</div>
+      </div>
+    </div>
+
+    <!-- Safe Space Banner -->
+    <div class="safe-banner">
+      <div class="safe-icon">💜</div>
+      <div>
+        <div class="safe-title">Be kind. This is a safe space.</div>
+        <div class="safe-sub">No judgements. Just understanding.</div>
+      </div>
+      <button class="safe-close" id="safe-close" aria-label="Dismiss">✕</button>
+    </div>
+
+    <!-- Messages -->
+    <div class="messages-area" id="messages-area">
+
+      <div class="msg-row other">
+        <div class="msg-avatar">👤</div>
+        <div class="msg-wrap">
+          <div class="msg-meta"><span class="msg-name">Anonymous</span><span class="msg-time">10:42 PM</span></div>
+          <div class="msg-bubble other-bubble">I have my exams in a week and I can't seem to focus at all. Feeling so anxious 😰</div>
+          <div class="msg-react">💜 3</div>
+        </div>
+      </div>
+
+      <div class="msg-row you">
+        <div class="msg-wrap">
+          <div class="msg-meta you-meta"><span class="msg-time">10:43 PM</span><span class="msg-name">You</span></div>
+          <div class="msg-bubble you-bubble">You're not alone, I feel the same sometimes. Take it one day at a time, you've got this! 💜</div>
+          <div class="msg-react you-react">💜 5</div>
+        </div>
+      </div>
+
+      <div class="msg-row other">
+        <div class="msg-avatar">👤</div>
+        <div class="msg-wrap">
+          <div class="msg-meta"><span class="msg-name">Anonymous</span><span class="msg-time">10:44 PM</span></div>
+          <div class="msg-bubble other-bubble">Thanks, this actually made me feel a little better 😊</div>
+          <div class="msg-react">💜 2</div>
+        </div>
+      </div>
+
+      <div class="msg-row other">
+        <div class="msg-avatar">👤</div>
+        <div class="msg-wrap">
+          <div class="msg-meta"><span class="msg-name">Anonymous</span><span class="msg-time">10:45 PM</span></div>
+          <div class="msg-bubble other-bubble">Let's all do our best and get through this together. We can do it! 💪</div>
+          <div class="msg-react">💜 4</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Typing indicator -->
+    <div class="typing-indicator" id="typing-indicator">
+      <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
+      Someone is typing...
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input-row">
+      <input type="text" id="chat-input" class="chat-input" placeholder="Type something kind…" autocomplete="off"/>
+      <button class="send-btn" id="send-btn">Send</button>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="chat-rooms.js"></script>
+</body>
+</html>
