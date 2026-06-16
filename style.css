@@ -14,10 +14,10 @@
   --bg-2:        #0f0f12;
   --bg-card:     #111116;
   --border:      rgba(255,255,255,0.06);
-  --border-hi:   rgba(155,110,255,0.25);
-  --purple:      #9B6EFF;
-  --purple-dim:  #7c57d4;
-  --purple-muted: rgba(155,110,255,0.12);
+  --border-hi:   rgba(6,182,212,0.25);
+  --purple:      #06B6D4;
+  --purple-dim:  #0891B2;
+  --purple-muted: rgba(6,182,212,0.12);
   --text-1:      #f0f0f5;
   --text-2:      #a0a0b0;
   --text-3:      #606070;
@@ -73,9 +73,9 @@ body {
   align-items: center;
   justify-content: center;
   width: 32px; height: 32px;
-  background: rgba(155,110,255,0.1);
+  background: rgba(6,182,212,0.1);
   border-radius: 8px;
-  border: 1px solid rgba(155,110,255,0.2);
+  border: 1px solid rgba(6,182,212,0.2);
 }
 
 .logo-text {
@@ -127,7 +127,7 @@ body {
 
 .btn-ghost:hover {
   color: var(--text-1);
-  border-color: rgba(155,110,255,0.4);
+  border-color: rgba(6,182,212,0.4);
   background: var(--purple-muted);
 }
 
@@ -186,8 +186,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 60% at 0% 50%, rgba(100,60,200,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 100% 0%, rgba(155,110,255,0.04) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 60% at 0% 50%, rgba(6,182,212,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 100% 0%, rgba(6,182,212,0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -209,8 +209,8 @@ body {
   font-size: 12.5px;
   font-weight: 500;
   color: var(--purple);
-  background: rgba(155,110,255,0.08);
-  border: 1px solid rgba(155,110,255,0.2);
+  background: rgba(6,182,212,0.08);
+  border: 1px solid rgba(6,182,212,0.2);
   padding: 5px 12px 5px 10px;
   border-radius: 100px;
   width: fit-content;
@@ -284,13 +284,13 @@ body {
   text-decoration: none;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   letter-spacing: 0.1px;
-  box-shadow: 0 2px 14px rgba(155,110,255,0.25);
+  box-shadow: 0 2px 14px rgba(6,182,212,0.25);
 }
 
 .btn-primary:hover {
   background: var(--purple-dim);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(155,110,255,0.3);
+  box-shadow: 0 4px 20px rgba(6,182,212,0.3);
 }
 
 .btn-primary svg {
@@ -318,8 +318,8 @@ body {
 
 .btn-secondary:hover {
   color: var(--text-1);
-  border-color: rgba(155,110,255,0.35);
-  background: rgba(155,110,255,0.06);
+  border-color: rgba(6,182,212,0.35);
+  background: rgba(6,182,212,0.06);
 }
 
 /* Feature Pills */
@@ -342,8 +342,8 @@ body {
 }
 
 .pill:hover {
-  border-color: rgba(155,110,255,0.2);
-  background: rgba(155,110,255,0.04);
+  border-color: rgba(6,182,212,0.2);
+  background: rgba(6,182,212,0.04);
 }
 
 .pill-icon {
@@ -351,7 +351,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 36px; height: 36px;
-  background: rgba(155,110,255,0.08);
+  background: rgba(6,182,212,0.08);
   border-radius: 8px;
   flex-shrink: 0;
   margin-top: 1px;
@@ -517,7 +517,7 @@ body {
 .chip-bar-fill {
   height: 100%;
   width: 68%;
-  background: linear-gradient(to right, var(--purple), #c084fc);
+  background: linear-gradient(to right, var(--purple), #22D3EE);
   border-radius: 2px;
   animation: bar-load 3s ease-in-out infinite alternate;
 }
@@ -577,9 +577,15 @@ body {
 }
 
 .feature-card:hover {
-  border-color: rgba(155,110,255,0.28);
+  border-color: rgba(6,182,212,0.28);
   transform: translateY(-3px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+.pricing-card.popular {
+  border-color: rgba(6,182,212,0.3);
+  background: rgba(6,182,212,0.04);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
 }
 
 .feature-icon-wrap {
@@ -587,8 +593,8 @@ body {
   align-items: center;
   justify-content: center;
   width: 44px; height: 44px;
-  background: rgba(155,110,255,0.08);
-  border: 1px solid rgba(155,110,255,0.15);
+  background: rgba(6,182,212,0.08);
+  border: 1px solid rgba(6,182,212,0.15);
   border-radius: 10px;
 }
 
@@ -639,7 +645,7 @@ body {
 }
 
 .stack-tag:hover {
-  border-color: rgba(155,110,255,0.3);
+  border-color: rgba(6,182,212,0.3);
   color: var(--purple);
 }
 

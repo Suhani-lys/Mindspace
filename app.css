@@ -2,7 +2,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#09090b;--bg2:#0d0d11;--card:#111116;--border:rgba(255,255,255,0.07);
-  --purple:#9B6EFF;--pdim:#7c57d4;--pmuted:rgba(155,110,255,0.12);--psoft:rgba(155,110,255,0.06);
+  --purple:#06B6D4;--pdim:#0891B2;--pmuted:rgba(6,182,212,0.12);--psoft:rgba(6,182,212,0.06);
   --t1:#f0f0f5;--t2:#a0a0b0;--t3:#52526a;--sw:200px;--rw:260px;
 }
 html{scroll-behavior:smooth}
@@ -15,7 +15,7 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;-webkit
 .sidebar{display:none!important}
 .sb-top{flex:1;display:flex;flex-direction:column}
 .sb-logo{display:flex;align-items:center;gap:10px;padding:18px 14px 14px;border-bottom:1px solid var(--border)}
-.sb-logo-icon{width:34px;height:34px;background:rgba(155,110,255,0.1);border:1px solid rgba(155,110,255,0.2);
+.sb-logo-icon{width:34px;height:34px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);
   border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sb-logo-name{font-family:'Sora',sans-serif;font-size:13.5px;font-weight:700;color:var(--t1);letter-spacing:.5px}
 .sb-logo-name span{color:var(--purple)}
@@ -62,7 +62,7 @@ body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;-webkit
 :root{--nav-h:54px}
 .topnav{grid-column:1/-1;position:sticky;top:0;z-index:100;display:flex;align-items:center;padding:0 28px;height:var(--nav-h);background:rgba(13,13,17,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .tnav-logo{display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0;margin-right:28px}
-.tnav-logo-icon{width:30px;height:30px;background:rgba(155,110,255,.1);border:1px solid rgba(155,110,255,.2);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.tnav-logo-icon{width:30px;height:30px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);border-radius:7px;display:flex;align-items:center;justify-content:center}
 .tnav-logo-name{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:var(--t1)}
 .tnav-logo-name span{color:var(--purple)}
 .tnav-links{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}

@@ -129,23 +129,19 @@ async function sendAI(text) {
   const typing = showTyping();
 
   try {
-    const keyRes = await fetch('/api/gemini-key');
-    const keyData = await keyRes.json();
-    
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${keyData.key}`, {
+    const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{
-          parts: [{ text: `You are a compassionate mental health support companion called MindSpace AI. The user says: "${text}". Reply with empathy, kindness and support in 2-3 sentences.` }]
-        }]
-      })
+      body: JSON.stringify({ message: text })
     });
 
     const data = await response.json();
-    const reply = data.candidates[0].content.parts[0].text;
     typing.remove();
-    addMsg(reply, false);
+    if (data.success) {
+      addMsg(data.reply, false);
+    } else {
+      addMsg("I'm here for you. Can you tell me more about how you're feeling?", false);
+    }
   } catch(e) {
     console.error(e);
     typing.remove();

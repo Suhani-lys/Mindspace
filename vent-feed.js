@@ -72,6 +72,6 @@ document.querySelectorAll('.like-btn').forEach(btn=>{
 document.querySelectorAll('.save-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const saved=btn.classList.toggle('saved');
-    btn.innerHTML=saved?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="#9B6EFF" stroke-width="1.8" stroke-linecap="round"/></svg> Saved':'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Save';
+    btn.innerHTML=saved?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="#06B6D4" stroke-width="1.8" stroke-linecap="round"/></svg> Saved':'<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Save';
   });
 });

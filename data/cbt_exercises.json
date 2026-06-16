@@ -1,0 +1,62 @@
+{
+  "anxious": {
+    "technique_name": "Decatastrophizing (The Worst-Case Scenario Audit)",
+    "steps": [
+      "Identify the catastrophe: What is the absolute worst thing you fear happening?",
+      "Assess probabilities: What is the actual likelihood of this event occurring?",
+      "Determine coping: If the worst happened, how would you manage/cope with it?",
+      "Evaluate the best-case and most likely scenarios to restore emotional balance."
+    ]
+  },
+  "overwhelmed": {
+    "technique_name": "Task Chunking & Locus of Control",
+    "steps": [
+      "Distinguish between what you can control right now and what is out of your hands.",
+      "Break down the massive task or situation into three tiny, bite-sized steps.",
+      "Identify the very first step (something that takes less than 5 minutes) and focus only on that."
+    ]
+  },
+  "lonely": {
+    "technique_name": "Self-Compassion Pause & Shared Humanity Check",
+    "steps": [
+      "Acknowledge the pain of feeling alone without judging yourself for it.",
+      "Practice 'Shared Humanity': Remind yourself that feeling lonely is a universal human experience, not a personal failure.",
+      "Identify one small, low-pressure act of kindness or micro-connection you can do for yourself today."
+    ]
+  },
+  "angry": {
+    "technique_name": "Cognitive Reframing & The Cool-Down Pause",
+    "steps": [
+      "Take a conscious breath and note the physiological signals of anger.",
+      "Identify the 'should' rule that was violated (e.g., 'People should act exactly as I expect').",
+      "Reframe the situation from a broader, less personalized perspective to lower distress levels."
+    ]
+  },
+  "sad": {
+    "technique_name": "Behavioral Activation & Thought Reframing",
+    "steps": [
+      "Identify any all-or-nothing cognitive distortions (e.g., 'Things will never get better').",
+      "Challenge the thought with objective evidence of times when things were okay.",
+      "Plan one simple activity that has historically brought a sense of accomplishment or pleasure."
+    ]
+  },
+  "hopeful": {
+    "technique_name": "Gratitude Anchoring & Positive Reinforcement",
+    "steps": [
+      "Savor the positive feeling fully and acknowledge the effort that led to this state.",
+      "Write down the specifics of what is working well right now.",
+      "Anchor this feeling to draw on it during future moments of distress."
+    ]
+  },
+  "general": {
+    "technique_name": "5-4-3-2-1 Sensory Grounding",
+    "steps": [
+      "Name 5 things you can see around you.",
+      "Name 4 things you can physically feel.",
+      "Name 3 things you can hear.",
+      "Name 2 things you can smell.",
+      "Name 1 thing you can taste.",
+      "This refocuses your mind on the present moment and reduces racing thoughts."
+    ]
+  }
+}
