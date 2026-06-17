@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="app.css"/>
 <link rel="stylesheet" href="resources.css"/>
+<script src="auth-helper.js"></script>
 </head>
 <body>
 <nav class="topnav">
@@ -55,35 +56,39 @@
     <div class="res-search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input type="text" placeholder="Search resources..." class="res-search-input"/></div>
   </div>
 
-  <div class="card">
-    <div class="res-section-hdr"><p class="section-title">Explore by Category</p><a href="#" class="view-all-link">View All</a></div>
-    <div class="cat-grid">
-      <div class="cat-card" style="--cc:#06B6D4"><div class="cat-icon" style="background:rgba(6,182,212,.15);">📄</div><div class="cat-name">Articles</div><div class="cat-desc">Read insightful articles</div><div class="cat-count" style="color:#06B6D4;">48 Resources</div></div>
-      <div class="cat-card" style="--cc:#f97316"><div class="cat-icon" style="background:rgba(249,115,22,.1);">▶️</div><div class="cat-name">Videos</div><div class="cat-desc">Watch helpful videos</div><div class="cat-count" style="color:#f97316;">32 Resources</div></div>
-      <div class="cat-card" style="--cc:#22c55e"><div class="cat-icon" style="background:rgba(34,197,94,.1);">🌿</div><div class="cat-name">Guided Practices</div><div class="cat-desc">Exercises for mind and body</div><div class="cat-count" style="color:#22c55e;">28 Resources</div></div>
-      <div class="cat-card" style="--cc:#f59e0b"><div class="cat-icon" style="background:rgba(245,158,11,.1);">📚</div><div class="cat-name">Books</div><div class="cat-desc">Recommended reads</div><div class="cat-count" style="color:#f59e0b;">24 Resources</div></div>
-      <div class="cat-card" style="--cc:#ec4899"><div class="cat-icon" style="background:rgba(236,72,153,.1);">🎙️</div><div class="cat-name">Podcasts</div><div class="cat-desc">Listen to inspiring talks</div><div class="cat-count" style="color:#ec4899;">18 Resources</div></div>
-      <div class="cat-card" style="--cc:#06b6d4"><div class="cat-icon" style="background:rgba(6,182,212,.1);">📋</div><div class="cat-name">Workbooks</div><div class="cat-desc">Interactive guides</div><div class="cat-count" style="color:#06b6d4;">16 Resources</div></div>
-    </div>
-  </div>
+  <div class="resources-area" id="resources-area">
+    <div class="resources-gallery" id="resources-gallery">
+      <div class="card">
+        <div class="res-section-hdr"><p class="section-title">Explore by Category</p><a href="#" class="view-all-link">View All</a></div>
+        <div class="cat-grid">
+          <div class="cat-card" style="--cc:#06B6D4"><div class="cat-icon" style="background:rgba(6,182,212,.15);">📄</div><div class="cat-name">Articles</div><div class="cat-desc">Read insightful articles</div><div class="cat-count" style="color:#06B6D4;">48 Resources</div></div>
+          <div class="cat-card" style="--cc:#f97316"><div class="cat-icon" style="background:rgba(249,115,22,.1);">▶️</div><div class="cat-name">Videos</div><div class="cat-desc">Watch helpful videos</div><div class="cat-count" style="color:#f97316;">32 Resources</div></div>
+          <div class="cat-card" style="--cc:#22c55e"><div class="cat-icon" style="background:rgba(34,197,94,.1);">🌿</div><div class="cat-name">Guided Practices</div><div class="cat-desc">Exercises for mind and body</div><div class="cat-count" style="color:#22c55e;">28 Resources</div></div>
+          <div class="cat-card" style="--cc:#f59e0b"><div class="cat-icon" style="background:rgba(245,158,11,.1);">📚</div><div class="cat-name">Books</div><div class="cat-desc">Recommended reads</div><div class="cat-count" style="color:#f59e0b;">24 Resources</div></div>
+          <div class="cat-card" style="--cc:#ec4899"><div class="cat-icon" style="background:rgba(236,72,153,.1);">🎙️</div><div class="cat-name">Podcasts</div><div class="cat-desc">Listen to inspiring talks</div><div class="cat-count" style="color:#ec4899;">18 Resources</div></div>
+          <div class="cat-card" style="--cc:#06b6d4"><div class="cat-icon" style="background:rgba(6,182,212,.1);">📋</div><div class="cat-name">Workbooks</div><div class="cat-desc">Interactive guides</div><div class="cat-count" style="color:#06b6d4;">16 Resources</div></div>
+        </div>
+      </div>
 
-  <div class="card">
-    <div class="res-section-hdr"><p class="section-title">Featured Resources</p><a href="#" class="view-all-link">View All</a></div>
-    <div class="featured-grid">
-      <div class="feat-card"><div class="feat-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1b69)"><span class="feat-badge article">Article</span><div class="feat-img-art">🧘</div></div><div class="feat-body"><div class="feat-title">How to Manage Anxiety Daily</div><div class="feat-desc">Practical tips to reduce anxiety and bring more calm into your life.</div><div class="feat-meta">⏱ 5 min read</div></div></div>
-      <div class="feat-card"><div class="feat-img" style="background:linear-gradient(135deg,#0a1628,#1e3a5f)"><span class="feat-badge video">Video</span><div class="feat-img-art">🎧</div></div><div class="feat-body"><div class="feat-title">5 Breathing Exercises</div><div class="feat-desc">Simple breathing techniques to help you relax and recharge.</div><div class="feat-meta">⏱ 8 min</div></div></div>
-      <div class="feat-card"><div class="feat-img" style="background:linear-gradient(135deg,#0a1a10,#1a3a24)"><span class="feat-badge guided">Guided</span><div class="feat-img-art">🪨</div></div><div class="feat-body"><div class="feat-title">Body Scan Meditation</div><div class="feat-desc">A guided practice to release tension and increase awareness.</div><div class="feat-meta">⏱ 15 min</div></div></div>
-      <div class="feat-card"><div class="feat-img" style="background:linear-gradient(135deg,#1a1000,#3a2800)"><span class="feat-badge book">Book</span><div class="feat-img-art">📖</div></div><div class="feat-body"><div class="feat-title">The Power of Now</div><div class="feat-desc">A guide to spiritual enlightenment by Eckhart Tolle.</div><div class="feat-meta">📖 Reading</div></div></div>
-    </div>
-  </div>
+      <div class="card">
+        <div class="res-section-hdr"><p class="section-title">Featured Resources</p><a href="#" class="view-all-link">View All</a></div>
+        <div class="featured-grid">
+          <div class="feat-card"><div class="feat-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1b69)"><span class="feat-badge article">Article</span><div class="feat-img-art">🧘</div></div><div class="feat-body"><div class="feat-title">How to Manage Anxiety Daily</div><div class="feat-desc">Practical tips to reduce anxiety and bring more calm into your life.</div><div class="feat-meta">⏱ 5 min read</div></div></div>
+          <div class="feat-card"><div class="feat-img" style="background:linear-gradient(135deg,#0a1628,#1e3a5f)"><span class="feat-badge video">Video</span><div class="feat-img-art">🎧</div></div><div class="feat-body"><div class="feat-title">5 Breathing Exercises</div><div class="feat-desc">Simple breathing techniques to help you relax and recharge.</div><div class="feat-meta">⏱ 8 min</div></div></div>
+          <div class="feat-card"><div class="feat-img" style="background:linear-gradient(135deg,#0a1a10,#1a3a24)"><span class="feat-badge guided">Guided</span><div class="feat-img-art">🪨</div></div><div class="feat-body"><div class="feat-title">Body Scan Meditation</div><div class="feat-desc">A guided practice to release tension and increase awareness.</div><div class="feat-meta">⏱ 15 min</div></div></div>
+          <div class="feat-card"><div class="feat-img" style="background:linear-gradient(135deg,#1a1000,#3a2800)"><span class="feat-badge book">Book</span><div class="feat-img-art">📖</div></div><div class="feat-body"><div class="feat-title">The Power of Now</div><div class="feat-desc">A guide to spiritual enlightenment by Eckhart Tolle.</div><div class="feat-meta">📖 Reading</div></div></div>
+        </div>
+      </div>
 
-  <div class="card">
-    <p class="section-title" style="margin-bottom:14px;">Self Help Tools</p>
-    <div class="tools-grid">
-      <div class="tool-card"><div class="tool-icon" style="background:rgba(6,182,212,.12);">✏️</div><div><div class="tool-title">Thought Challenger</div><div class="tool-desc">Identify and challenge negative thoughts.</div></div><button class="tool-btn purple">Try Now</button></div>
-      <div class="tool-card"><div class="tool-icon" style="background:rgba(236,72,153,.1);">😊</div><div><div class="tool-title">Gratitude Journal</div><div class="tool-desc">Build positivity by practicing gratitude.</div></div><button class="tool-btn pink">Start Now</button></div>
-      <div class="tool-card"><div class="tool-icon" style="background:rgba(34,197,94,.1);">🎯</div><div><div class="tool-title">Goal Planner</div><div class="tool-desc">Set small goals for personal growth.</div></div><button class="tool-btn green">Plan Now</button></div>
-      <div class="tool-card"><div class="tool-icon" style="background:rgba(6,182,212,.1);">🌙</div><div><div class="tool-title">Sleep Better</div><div class="tool-desc">Tips and tools for better sleep.</div></div><button class="tool-btn cyan">Explore</button></div>
+      <div class="card">
+        <p class="section-title" style="margin-bottom:14px;">Self Help Tools</p>
+        <div class="tools-grid">
+          <div class="tool-card"><div class="tool-icon" style="background:rgba(6,182,212,.12);">✏️</div><div><div class="tool-title">Thought Challenger</div><div class="tool-desc">Identify and challenge negative thoughts.</div></div><button class="tool-btn purple">Try Now</button></div>
+          <div class="tool-card"><div class="tool-icon" style="background:rgba(236,72,153,.1);">😊</div><div><div class="tool-title">Gratitude Journal</div><div class="tool-desc">Build positivity by practicing gratitude.</div></div><button class="tool-btn pink">Start Now</button></div>
+          <div class="tool-card"><div class="tool-icon" style="background:rgba(34,197,94,.1);">🎯</div><div><div class="tool-title">Goal Planner</div><div class="tool-desc">Set small goals for personal growth.</div></div><button class="tool-btn green">Plan Now</button></div>
+          <div class="tool-card"><div class="tool-icon" style="background:rgba(6,182,212,.1);">🌙</div><div><div class="tool-title">Sleep Better</div><div class="tool-desc">Tips and tools for better sleep.</div></div><button class="tool-btn cyan">Explore</button></div>
+        </div>
+      </div>
     </div>
   </div>
 </main>
@@ -113,4 +118,5 @@
     <p class="rp-reminder-text">Your mental health is just as important as your physical health.</p>
   </div>
 </aside>
+<script src="resources.js"></script>
 </body></html>

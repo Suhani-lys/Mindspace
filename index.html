@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="auth-helper.js"></script>
 </head>
 <body>
 
@@ -56,8 +57,8 @@
       <p class="hero-platform-label">Anonymous Mental Health Support Platform</p>
 
       <p class="hero-sub">
-        MindSpace is a full-stack application where users can share thoughts anonymously,
-        track their mood, receive AI-powered emotional support, and connect with a supportive community.
+        MindSpace is a secure, anonymous sanctuary for your mind. Express your thoughts freely,
+        track your emotional patterns, receive clinically backed AI support guides, and connect with a compassionate community.
       </p>
 
       <div class="hero-cta">
@@ -110,8 +111,8 @@
 
   </section>
 
-  <!-- FEATURES REMOVED -->
-  <section class="features-section" id="features" style="display:none;">
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
     <div class="section-label">Core Features</div>
     <h2 class="section-heading">What MindSpace Offers</h2>
     <div class="features-grid">
@@ -167,21 +168,150 @@
     </div>
   </section>
 
-  <!-- TECH STACK STRIP -->
-  <section class="stack-strip" id="stack">
-    <p class="stack-line">
-      Built with
-      <span class="stack-tag">React</span>
-      <span class="stack-dot">·</span>
-      <span class="stack-tag">Node.js</span>
-      <span class="stack-dot">·</span>
-      <span class="stack-tag">Express</span>
-      <span class="stack-dot">·</span>
-      <span class="stack-tag">MongoDB</span>
-      <span class="stack-dot">·</span>
-      <span class="stack-tag">AI Emotion Analysis</span>
-    </p>
+  <!-- PRICING Plans -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-label">Pricing Plans</div>
+    <h2 class="section-heading">Access MindSpace Your Way</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Free Sanctuary</h3>
+        <div class="price">$0<span>/mo</span></div>
+        <p class="plan-desc">A safe anonymous environment to express yourself and keep track of your core emotional patterns.</p>
+        <ul class="plan-features">
+          <li>✓ Anonymous sharing & venting</li>
+          <li>✓ Real-time peer chat rooms</li>
+          <li>✓ Voice journaling & transcripts</li>
+          <li>✓ Basic mood timeline graphs</li>
+        </ul>
+        <a href="new-vent.html" class="pricing-btn">Get Started</a>
+      </div>
+      <div class="pricing-card premium">
+        <div class="pricing-badge">Recommended</div>
+        <h3>MindSpace Premium</h3>
+        <div class="price">$9<span>/mo</span></div>
+        <p class="plan-desc">Accelerate your well-being journey with unrestricted access to premium clinical-backed self-help guides and exercises.</p>
+        <ul class="plan-features">
+          <li>✓ Everything in the Free plan</li>
+          <li>✓ Interactive guided CBT directory</li>
+          <li>✓ Structured workbooks & worksheets</li>
+          <li>✓ Advanced clinical AI coping models</li>
+          <li>✓ Ad-free experience</li>
+        </ul>
+        <button id="premium-subscribe-btn" class="pricing-btn premium-btn">Subscribe Now</button>
+      </div>
+    </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const token = localStorage.getItem('token');
+      
+      // Load Razorpay dynamically if token is set
+      if (token) {
+        const rzpScript = document.createElement('script');
+        rzpScript.src = 'https://checkout.razorpay.com/v1/checkout.js';
+        rzpScript.async = true;
+        document.head.appendChild(rzpScript);
+      }
+
+      const subscribeBtn = document.getElementById('premium-subscribe-btn');
+      if (subscribeBtn) {
+        subscribeBtn.addEventListener('click', async () => {
+          if (!token) {
+            window.location.href = 'login.html';
+            return;
+          }
+          
+          subscribeBtn.disabled = true;
+          subscribeBtn.textContent = 'Preparing checkout...';
+          
+          try {
+            const res = await fetch('/api/razorpay/create-subscription', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' }
+            });
+            const data = await res.json();
+            if (res.ok && data.success) {
+              if (data.mock) {
+                window.location.href = data.url;
+              } else if (data.subscriptionId && data.keyId) {
+                openRazorpayCheckout(data.keyId, data.subscriptionId);
+              } else {
+                alert('Invalid response structure from server.');
+                subscribeBtn.disabled = false;
+                subscribeBtn.textContent = 'Subscribe Now';
+              }
+            } else {
+              alert(data.message || 'Unable to open checkout portal.');
+              subscribeBtn.disabled = false;
+              subscribeBtn.textContent = 'Subscribe Now';
+            }
+          } catch (err) {
+            console.error('Failed to initiate checkout:', err);
+            alert('Failed to reach payment gateway. Please try again.');
+            subscribeBtn.disabled = false;
+            subscribeBtn.textContent = 'Subscribe Now';
+          }
+        });
+      }
+
+      function openRazorpayCheckout(keyId, subscriptionId) {
+        if (typeof Razorpay === 'undefined') {
+          alert('Razorpay script is still loading. Please try again in a moment.');
+          subscribeBtn.disabled = false;
+          subscribeBtn.textContent = 'Subscribe Now';
+          return;
+        }
+
+        const options = {
+          key: keyId,
+          subscription_id: subscriptionId,
+          name: "MindSpace Premium",
+          description: "Monthly mental health premium resources paywall bypass",
+          theme: {
+            color: "#06B6D4"
+          },
+          handler: async function (response) {
+            subscribeBtn.textContent = 'Verifying payment...';
+            try {
+              const res = await fetch('/api/razorpay/verify-payment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  razorpay_payment_id: response.razorpay_payment_id,
+                  razorpay_subscription_id: response.razorpay_subscription_id,
+                  razorpay_signature: response.razorpay_signature
+                })
+              });
+              const result = await res.json();
+              if (res.ok && result.success) {
+                alert('MindSpace Premium Subscription Activated! 🎉');
+                window.location.href = 'resources.html';
+              } else {
+                alert(result.message || 'Payment signature verification failed.');
+                subscribeBtn.disabled = false;
+                subscribeBtn.textContent = 'Subscribe Now';
+              }
+            } catch (err) {
+              console.error('Payment verification failed:', err);
+              alert('Network error during payment verification.');
+              subscribeBtn.disabled = false;
+              subscribeBtn.textContent = 'Subscribe Now';
+            }
+          },
+          modal: {
+            ondismiss: function () {
+              subscribeBtn.disabled = false;
+              subscribeBtn.textContent = 'Subscribe Now';
+            }
+          }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+      }
+    });
+  </script>
 
 </body>
 </html>

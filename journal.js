@@ -74,3 +74,103 @@ document.getElementById('save-entry-btn').addEventListener('click', async functi
 
 // Save draft
 document.getElementById('save-draft-btn').addEventListener('click',function(){const o=this.innerHTML;this.innerHTML='✓ Saved';setTimeout(()=>this.innerHTML=o,1800);});
+
+// Speech Recognition Web Speech API
+const micBtn = document.getElementById('mic-btn');
+const micStatusText = document.getElementById('mic-status-text');
+
+if (micBtn && micStatusText) {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    // If Web Speech API not supported, hide button
+    micBtn.style.display = 'none';
+  } else {
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = 'en-US';
+
+    let recognizing = false;
+
+    micBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (recognizing) {
+        recognition.stop();
+      } else {
+        jt.value = '';
+        recognition.start();
+      }
+    });
+
+    recognition.onstart = () => {
+      recognizing = true;
+      micStatusText.textContent = 'Listening...';
+      micBtn.style.color = '#ef4444'; // red indicator
+    };
+
+    recognition.onerror = (event) => {
+      console.error('Speech recognition error:', event.error);
+    };
+
+    recognition.onend = async () => {
+      recognizing = false;
+      micStatusText.textContent = 'Record Voice';
+      micBtn.style.color = 'var(--purple)';
+
+      const text = jt.value.trim();
+      if (!text) return;
+
+      try {
+        micStatusText.textContent = 'Analyzing Mood...';
+        const response = await fetch('/api/ml/predict-emotion', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text })
+        });
+        const result = await response.json();
+        if (result.success && result.emotion) {
+          let moodToSelect = 'Neutral';
+          const emotion = result.emotion;
+          
+          if (emotion === 'hopeful') {
+            moodToSelect = 'Happy';
+          } else if (emotion === 'sad' || emotion === 'lonely') {
+            moodToSelect = 'Sad';
+          } else if (emotion === 'angry') {
+            moodToSelect = 'Sad';
+          } else if (emotion === 'anxious' || emotion === 'overwhelmed') {
+            moodToSelect = 'Very Sad';
+          } else {
+            moodToSelect = 'Neutral';
+          }
+
+          const btn = Array.from(document.querySelectorAll('.mood-btn')).find(b => b.dataset.m === moodToSelect);
+          if (btn) {
+            document.querySelectorAll('.mood-btn').forEach(x => x.classList.remove('sel'));
+            btn.classList.add('sel');
+          }
+        }
+      } catch (err) {
+        console.error('Failed to auto-predict emotion:', err);
+      } finally {
+        micStatusText.textContent = 'Record Voice';
+      }
+    };
+
+    recognition.onresult = (event) => {
+      let interimTranscript = '';
+      let finalTranscript = '';
+
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          finalTranscript += event.results[i][0].transcript;
+        } else {
+          interimTranscript += event.results[i][0].transcript;
+        }
+      }
+
+      jt.value = (finalTranscript + interimTranscript).trim();
+      jt.dispatchEvent(new Event('input'));
+    };
+  }
+}

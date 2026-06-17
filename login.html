@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sign In — MindSpace</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="app.css"/>
+<link rel="stylesheet" href="login.css"/>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="tnav-logo">
+    <div class="tnav-logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="#06B6D4"/></svg></div>
+    <span class="tnav-logo-name">MIND<span>SPACE</span></span>
+  </a>
+  <div class="tnav-links">
+    <a href="index.html" class="tnav-link">Home</a>
+    <a href="resources.html" class="tnav-link">Resources</a>
+  </div>
+</nav>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="#06B6D4"/></svg></div>
+      <h2 class="logo-title">MIND<span>SPACE</span></h2>
+    </div>
+    
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login">Login</button>
+      <button class="auth-tab" id="tab-register">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="form-login" class="auth-form active-form-section">
+      <div class="input-group">
+        <label for="login-username">Username</label>
+        <input type="text" id="login-username" placeholder="Enter username" required autocomplete="off"/>
+      </div>
+      <div class="input-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="Enter password" required/>
+      </div>
+      <div id="login-error" class="auth-error"></div>
+      <button type="submit" class="auth-btn">Sign In</button>
+    </form>
+
+    <!-- Register Form -->
+    <form id="form-register" class="auth-form">
+      <div class="input-group">
+        <label for="register-username">Choose Username</label>
+        <input type="text" id="register-username" placeholder="Choose a unique username" required autocomplete="off"/>
+      </div>
+      <div class="input-group">
+        <label for="register-password">Password</label>
+        <input type="password" id="register-password" placeholder="Choose a strong password" required/>
+      </div>
+      <div id="register-error" class="auth-error"></div>
+      <div id="register-success" class="auth-success"></div>
+      <button type="submit" class="auth-btn">Create Account</button>
+    </form>
+  </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

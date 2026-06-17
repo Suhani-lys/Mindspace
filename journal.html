@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="app.css"/>
 <link rel="stylesheet" href="journal.css"/>
+<script src="auth-helper.js"></script>
 </head>
 <body>
 <nav class="topnav">
@@ -102,6 +103,8 @@
       <button class="tb-btn" title="Ordered list">1.</button>
       <div class="tb-divider"></div>
       <button class="tb-btn" title="Emoji">🙂</button>
+      <div class="tb-divider"></div>
+      <button class="tb-btn" id="mic-btn" title="Record Voice (Speech-to-Text)" style="display: flex; align-items: center; gap: 4px; color: var(--purple); font-weight: 500; font-size: 12.5px;">🎙️ <span id="mic-status-text">Record Voice</span></button>
     </div>
 
     <div class="j-textarea-wrap">
